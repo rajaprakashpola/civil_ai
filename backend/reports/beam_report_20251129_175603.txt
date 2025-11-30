@@ -1,0 +1,28 @@
+BEAM DESIGN REPORT
+Generated: 2025-11-29T17:56:03.057379
+
+INPUTS:
+ Span = 6.0 m
+ Section = 300.0 x 500.0 mm (cover 25.0 mm)
+ Loads (DL, LL) = 10.0, 8.0 kN/m
+ Materials: fc'=30.0 MPa, fy=415.0 MPa
+
+RESULTS (Flexure):
+ Factored UDL = 24.8 kN/m
+ Factored Mu = 111.6 kN·m
+ Effective depth d = 465.0 mm
+ Required As = 738.59 mm²
+ Provided = 4×16 mm → 804.25 mm²
+ Utilization = 91.84 %
+
+SHEAR CHECK:
+ Vu_kN: 74.4
+ Vc_kN: 129.892
+ phiVc_kN: 97.419
+ needs_shear_reinf: False
+ recommended_stirrup_dia_mm: None
+ recommended_spacing_mm: None
+
+NOTES:
+- This is a simplified automated check. Always cross-check for special cases.
+- Designer retains responsibility for final detailing.

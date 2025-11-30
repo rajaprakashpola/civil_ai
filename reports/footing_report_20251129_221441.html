@@ -1,0 +1,80 @@
+<html><body style='font-family:Arial,Helvetica,sans-serif;padding:16px;'><h1>Footing design report</h1>
+<h2>Inputs</h2><pre>{
+  "Pu_kN": 300.0,
+  "col_b_mm": 300.0,
+  "col_d_mm": 300.0,
+  "soil_allow_kN_per_m2": 150.0,
+  "pad_depth_mm": 400.0,
+  "fc_MPa": 25.0,
+  "fy_MPa": 415.0,
+  "eccentricity_x_m": 0.0,
+  "eccentricity_y_m": 0.0,
+  "assumed_side_m": null,
+  "cover_mm": 25.0,
+  "bar_dia_mm": 10.0,
+  "target_spacing_mm": 150.0
+}</pre>
+<h2>Results</h2><pre>{
+  "A_req_m2": 2.0,
+  "side_m": 1.414,
+  "A_used_m2": 2.0,
+  "eccentricity_m": 0,
+  "ecc_effect_factor": 1.0,
+  "A_final_m2": 2.0,
+  "pad_depth_mm": 400.0,
+  "As_req_mm2": 6000.0,
+  "bar_dia_mm": 10.0,
+  "spacing_mm": 150.0,
+  "n_per_row": 39,
+  "n_layers": 2,
+  "n_bars_total": 78,
+  "provided_As_mm2": 6126.11,
+  "notes": {
+    "method": "prototype/grid reinforcement -> choose bar dia & spacing -> adjust to meet crude As_req",
+    "assumptions": "square pad, two layers (top+bottom) used for counting; improve later for detailed rebar layout."
+  },
+  "drawing_params": {
+    "pad_side_m": 1.414,
+    "pad_depth_mm": 400.0,
+    "cover_mm": 25.0,
+    "bar_dia_mm": 10.0,
+    "n_per_row": 39,
+    "n_layers": 2,
+    "spacing_mm": 150.0
+  },
+  "punching": {
+    "inputs": {
+      "Pu_kN": 300.0,
+      "col_b_mm": 300.0,
+      "col_d_mm": 300.0,
+      "pad_depth_mm": 400.0,
+      "fc_MPa": 25.0,
+      "phi": 0.75
+    },
+    "results": {
+      "Vu_N": 300000.0,
+      "v_u_MPa": 0.378024,
+      "vc_MPa": 0.85,
+      "phiVc_N": 505920.0,
+      "utilization_percent": 59.3,
+      "punching_safe": true,
+      "b0_mm": 2480.0,
+      "d_eff_mm": 320.0,
+      "notes": "Prototype punching check. Replace with full code-based ACI/IS routine for production."
+    }
+  },
+  "serviceability": {
+    "inputs": {
+      "bar_spacing_mm": 150.0,
+      "cover_mm": 25.0,
+      "stress_steel_MPa": 207.5
+    },
+    "results": {
+      "estimated_mm": 0.0415,
+      "allowable_mm": 0.3,
+      "ok": true,
+      "notes": "Prototype crack-width estimate \u2014 replace with full code-based check for production."
+    }
+  }
+}</pre>
+</body></html>

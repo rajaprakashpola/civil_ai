@@ -1,0 +1,32 @@
+=== SLAB DESIGN REPORT ===
+Timestamp: 2025-11-29 16:05:32
+
+INPUTS:
+{
+  "span_m": 3.0,
+  "thickness_mm": 150.0,
+  "dl_kN_per_m2": 3.0,
+  "ll_kN_per_m2": 2.0,
+  "fc_MPa": 25.0,
+  "fy_MPa": 415.0,
+  "cover_mm": 20.0,
+  "bar_dia_mm": 10.0
+}
+
+RESULTS:
+{
+  "Mu_kNm": 7.65,
+  "effective_depth_mm": 125.0,
+  "required_As_mm2_per_m": 225.0,
+  "provided_As_mm2_per_m": 261.799,
+  "bar_dia_mm": 10,
+  "spacing_mm": 300,
+  "utilization_percent": 85.94,
+  "notes": {
+    "w_u_kN_per_m2": 6.8,
+    "Mu_kNm_per_m": 7.65,
+    "As_req_mm2_per_m_raw": 188.34,
+    "As_min_mm2_per_m": 225.0,
+    "raw_spacing_mm": 349.07
+  }
+}
