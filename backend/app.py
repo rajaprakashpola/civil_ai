@@ -74,16 +74,25 @@ try:
 except Exception:
     generate_drawing_for_design = None  # we'll provide a lightweight fallback below
 
+DEFAULT_ALLOW_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:3001",
+]
+
+def _get_allow_origins() -> list[str]:
+    raw = os.getenv("BACKEND_ALLOW_ORIGINS", "")
+    if not raw:
+        return DEFAULT_ALLOW_ORIGINS
+    origins = [origin.strip() for origin in raw.split(",") if origin.strip()]
+    return origins or DEFAULT_ALLOW_ORIGINS
+
+
 app = FastAPI(title="Civil AI Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "http://localhost:3001",
-        # add other frontend origins if needed
-    ],
+    allow_origins=_get_allow_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -669,4 +678,6 @@ def root():
 if __name__ == "__main__":
     # Prefer running uvicorn from your venv (run from backend/ directory):
     #   python -m uvicorn app:app --reload --host 127.0.0.1 --port 8010
-    uvicorn.run("app:app", host="127.0.0.1", port=8010, reload=True)
+    host = os.getenv("BACKEND_HOST", "127.0.0.1")
+    port = int(os.getenv("BACKEND_PORT", "8010"))
+    uvicorn.run("app:app", host=host, port=port, reload=True)
