@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120" viewBox="0 0 300 120">
-      <line x1="20" y1="30" x2="280" y2="30" stroke="#000" />
-      <rect x="40" y="40" width="220" height="40" fill="#efefef" stroke="#000"/>
-      <line x1="50" y1="50" x2="250" y2="50" stroke="#c62828" stroke-width="2"/><line x1="50" y1="52" x2="250" y2="52" stroke="#c62828" stroke-width="2"/><line x1="50" y1="55" x2="250" y2="55" stroke="#c62828" stroke-width="2"/><line x1="50" y1="58" x2="250" y2="58" stroke="#c62828" stroke-width="2"/><line x1="50" y1="61" x2="250" y2="61" stroke="#c62828" stroke-width="2"/><line x1="50" y1="64" x2="250" y2="64" stroke="#c62828" stroke-width="2"/><line x1="50" y1="67" x2="250" y2="67" stroke="#c62828" stroke-width="2"/><line x1="50" y1="70" x2="250" y2="70" stroke="#c62828" stroke-width="2"/>
-      <text x="10" y="110" font-size="12">Elevation | L=3.0 m, depth=500 mm</text>
-    </svg>
