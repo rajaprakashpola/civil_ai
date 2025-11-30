@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 
 /**
@@ -14,7 +15,8 @@ import React, { useEffect, useState } from "react";
 
 type Tab = "beam" | "slab" | "column" | "footing" | "combined";
 
-const backend = "http://127.0.0.1:8010";
+const backend =
+  (process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8010").replace(/\/$/, "");
 
 function fmt(n: any, digits = 2) {
   if (n === null || n === undefined) return "-";
@@ -47,13 +49,6 @@ function findReportPaths(obj: any): { txt?: string; html?: string; pdf?: string 
     }
   }
   return null;
-}
-
-function buildUrl(pathOrUrl?: string | null) {
-  if (!pathOrUrl) return null;
-  if (/^https?:\/\//.test(pathOrUrl)) return pathOrUrl;
-  const p = pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`;
-  return `${backend}${p}`;
 }
 
 /* ------------------------------ Small UI bits ----------------------------- */
@@ -842,6 +837,7 @@ export default function HomePage() {
                       Download
                     </a>
                     <div style={{ marginTop: 8 }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={`${backend}${drawingFiles.svg_plan}`} alt="plan" style={{ width: "100%", maxWidth: 380, borderRadius: 6, border: "1px solid #203040" }} />
                     </div>
                   </div>
